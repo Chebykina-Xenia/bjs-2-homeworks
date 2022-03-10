@@ -16,16 +16,12 @@ function getArrayParams(arr) {
     sum += arr[i];
   };
   
-//  arg = parseFloat((sum / arr.length).toFixed(2));
- arg = Number((sum / arr.length).toFixed(2));
+arg = Number((sum / arr.length).toFixed(2));
 
-
-  return { min: min, max: max, arg: arg};
+return { min: min, max: max, arg: arg};
 };
 
-
 // Задание 2
-//сумма каждого массива в массиве
 function worker(arr) {
   let arrSum = 0;
   if(Array.isArray(arr)) {
@@ -56,10 +52,10 @@ function worker(arr) {
 function worker2(arr) {
   let max, min
   let difference = 0;
-   if(Array.isArray(arr)) {
-     min = Math.min(...arr);
-     max = Math.max(...arr);
-     difference = Math.abs(max - min);          
-        }
-   return  difference
+  if(Array.isArray(arr)) {
+   min = Math.min(...arr);
+   max = Math.max(...arr);
+   difference = Math.abs(max - min);          
+ }
+ return  difference
 }
