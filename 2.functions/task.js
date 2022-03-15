@@ -6,56 +6,62 @@ for (let i = -100; i <= 100;){
 
 // Задание 1
 function getArrayParams(arr) {
-  let min, max, avg;
-
-  min = Math.min(...arr);
-  max = Math.max(...arr);
-  
+  let min = Infinity; 
+  let max = -Infinity; 
+  let avg = 0; 
   let sum = 0;
+
   for(let i = 0; i < arr.length; i++){
     sum += arr[i];
+    if(arr[i] > max) {
+      max = arr[i];
+    }
+    if(arr[i] < min) {
+      min = arr[i];
+    }
   };
   
-arg = Number((sum / arr.length).toFixed(2));
+  avg = Number((sum / arr.length).toFixed(2));
 
-return { min: min, max: max, arg: arg};
+  return { min: min, max: max, avg: avg};
 };
 
 // Задание 2
 function worker(arr) {
   let arrSum = 0;
   if(Array.isArray(arr)) {
-       // let arrI = arr[i];
-       let sum = 0;
-       for(let j = 0; j < arr.length; j++){
-        sum += arr[j];
-      }
-      arrSum = sum;
-    } 
-    return  arrSum
+   let sum = 0;
+   for(let j = 0; j < arr.length; j++){
+    sum += arr[j];
   }
+  arrSum = sum;
+} 
+return  arrSum
+}
 
-  function makeWork(arr,func){
-    let max = 0;
-    let x = [];
-    let sum = 0;
-    for(let i = 0; i < arr.length; ++i){
-      sum = func(arr[i]);
-      if (sum > max){
-        max = sum;
-      }
+function makeWork(arr,func){
+  let max = 0;
+  let sum = 0;
+  for(let i = 0; i < arr.length; ++i){
+    sum = func(arr[i]);
+    if (sum > max){
+      max = sum;
     }
-    return max;
   }
+  return max;
+}
 
 // Задание 3
 function worker2(arr) {
   let max, min
   let difference = 0;
+  let object = {};
+
   if(Array.isArray(arr)) {
-   min = Math.min(...arr);
-   max = Math.max(...arr);
-   difference = Math.abs(max - min);          
- }
- return  difference
+    object = getArrayParams(arr);
+    min = object.min;
+    max = object.max;
+    difference = Math.abs(max - min);          
+  }
+  return  difference;
 }
