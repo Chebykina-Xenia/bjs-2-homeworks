@@ -1,10 +1,15 @@
 const sherlock = new PrintEditionItem("Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе", 2019, 1008);
+const sherlock1 = new Magazine("Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе", 2019, 1008);
+
 const picknick = new FantasticBook("Аркадий и Борис Стругацкие", "Пикник на обочине", 1972, 168);
 
 console.log(sherlock.releaseDate); //2019
 console.log(sherlock.state); //100
 sherlock.fix();
 console.log(sherlock.state); //100
+console.log(sherlock1.state); //100
+console.log(sherlock1.type); //100
+
 
 console.log(picknick.author); //"Аркадий и Борис Стругацкие"
 picknick.state = 10;
@@ -19,9 +24,12 @@ library.addBook(new FantasticBook("Аркадий и Борис Стругацк
 library.addBook(new NovelBook("Герберт Уэллс", "Машина времени", 1895, 138));
 library.addBook(new Magazine("Мурзилка", 1924, 60));
 
-console.log(library.findBookBy("name", "Властелин колец")); //null
-console.log(library.findBookBy("releaseDate", 1924).name); //"Мурзилка"
+console.log(library.books); //15
 
-console.log("Количество книг до выдачи: " + library.books.length); //Количество книг до выдачи: 4
-library.giveBookByName("Машина времени");
-console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3
+
+//console.log(library.findBookBy("name", "Властелин колец")); //null
+//console.log(library.findBookBy("releaseDate", 1924).name); //"Мурзилка"
+
+//console.log("Количество книг до выдачи: " + library.books.length); //Количество книг до выдачи: 4
+//library.giveBookByName("Машина времени");
+//console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3
