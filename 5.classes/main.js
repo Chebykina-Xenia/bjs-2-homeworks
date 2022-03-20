@@ -27,9 +27,9 @@ library.addBook(new Magazine("Мурзилка", 1924, 60));
 console.log(library.books); //15
 
 
-//console.log(library.findBookBy("name", "Властелин колец")); //null
-//console.log(library.findBookBy("releaseDate", 1924).name); //"Мурзилка"
+console.log(library.findBookBy("name", "Властелин колец")); //null
+console.log(library.findBookBy("releaseDate", 1924).name); //"Мурзилка"
 
-//console.log("Количество книг до выдачи: " + library.books.length); //Количество книг до выдачи: 4
-//library.giveBookByName("Машина времени");
-//console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3
+console.log("Количество книг до выдачи: " + library.books.length); //Количество книг до выдачи: 4
+library.giveBookByName("Машина времени");
+console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3
