@@ -57,7 +57,7 @@ getCurrentFormattedTime() {
   start (){ 
     let arr = this.alarmCollection;
     if (this.timerId === null){
-      setInterval (arr.forEach (obj => this.checkClock(obj)), 1000);
+      setInterval (arr.forEach (obj => {return this.checkClock(obj)}), 1000);
    } 
  }
 
