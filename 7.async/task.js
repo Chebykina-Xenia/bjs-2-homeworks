@@ -49,7 +49,7 @@ getCurrentFormattedTime() {
     let sysdate = this.getCurrentFormattedTime();
     let timePhone = phoneObj.time;
     if (sysdate === timePhone){
-      return phoneObj.func;
+      return phoneObj.func();
     }
   }
 
@@ -57,14 +57,14 @@ getCurrentFormattedTime() {
   start (){ 
     let arr = this.alarmCollection;
     if (this.timerId === null){
-      setInterval (arr.forEach (obj => {return this.checkClock(obj)}), 1000);
+      this.timerId = setInterval (() => {arr.forEach (obj => this.checkClock(obj))}, 1000);
    } 
  }
 
  stop(){
   if (this.timerId != null){
-    clearInterval (this.start);
-    this.timerId === null;
+    clearInterval (this.timerId);
+    this.timerId = null;
   }
 }
 
