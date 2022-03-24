@@ -58,24 +58,24 @@ getCurrentFormattedTime() {
     let arr = this.alarmCollection;
     if (this.timerId === null){
       this.timerId = setInterval (() => {arr.forEach (obj => this.checkClock(obj))}, 1000);
-   } 
- }
-
- stop(){
-  if (this.timerId != null){
-    clearInterval (this.timerId);
-    this.timerId = null;
+    } 
   }
-}
 
-printAlarms () {
-  let arr = this.alarmCollection;
-  arr.forEach (obj => console.log("Будильник № " + obj.id + " заведён на " + obj.time));
-}
+  stop(){
+    if (this.timerId != null){
+      clearInterval (this.timerId);
+      this.timerId = null;
+    }
+  }
 
-clearAlarms(){
-  this.stop();
-  this.alarmCollection = [];
-}
+  printAlarms () {
+    let arr = this.alarmCollection;
+    arr.forEach (obj => console.log("Будильник № " + obj.id + " заведён на " + obj.time));
+  }
+
+  clearAlarms(){
+    this.stop();
+    this.alarmCollection = [];
+  }
 }
 
